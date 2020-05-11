@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+
+<div class="section no-pad-bot"   id="index-banner">
+
+  <div th:action="@{formProducto}" th:object="${producto}" method="post">
+
+
+    <br>
+	<h1 style="font-family: Arial; margin-left: 27%">INGRESAR PRODUCTO</h1>
+    <br>
+    <br>
+      <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label" style="font-family: Arial; text-align: center" >Nombre del producto</label>
+        <div class="col-sm-6">
+          <input type="text" th:field="*{nombre}" class="form-control" id="name" placeholder="Nombre producto">
+          <span th:errors="*{nombre}" style="color:#ff0000" id="name" class="form-text text-muted"></span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="descripcion" class="col-sm-2 col-form-label" style="font-family: Arial; text-align: center">Descripcion</label>
+        <div class="col-sm-6">
+          <input type="text" th:field="*{descripcion}" class="form-control" id="descripcion"
+            placeholder="Descripcion del producto">
+          <span th:errors="*{descripcion}" style="color:#ff0000" id="descripcion" class="form-text text-muted"></span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="precio" class="col-sm-2 col-form-label" style="font-family: Arial; text-align: center">Precio</label>
+        <div class="col-sm-6">
+          <input type="number" th:field="*{precio}" class="form-control" id="precio">
+          <span th:errors="*{precio}" style="color:#ff0000" id="precio" class="form-text text-muted"></span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="vencimiento" class="col-sm-2 col-form-label" style="font-family: Arial; text-align: center">Fecha de vencimiento</label>
+        <div class="col-sm-6">
+          <input type="text" th:field="*{vencimiento}" class="form-control" id="precio">
+          <span th:errors="*{vencimiento}" style="color:#ff0000" id="vencimiento" class="form-text text-muted"></span>
+        </div>
+      </div>
+
+      <button type="submit" class="btn waves-effect" name="action" style="background: brown;color: white; margin-left: 35%">Ingresar producto</button>
+
+    </div>
+  </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+  </form>
+
+</body>
+
+</html>

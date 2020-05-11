@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body style="background: cadetblue">
+
+	<form th:action="@{/seguridad}" method="post" th:object="${robot}">
+<div class="container"  style="margin-top: 15%;color: lightblue">
+		<div class="form-group row">
+
+			<div class="col-sm-10">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="gridCheck1"
+						th:field="*{soyRobot}" th:value="${false}"> <label
+						class="form-check-label" for="gridCheck1"> Marcar solo si usted es un robot</label>
+						<span th:errors="*{soyRobot}" style="color:#ff0000" id="name" class="form-text text-muted"></span>
+				</div>
+			</div>
+		</div>
+	<div style="display: flex; padding: 1em;">
+		<div class="form-group row">
+			<div class="col-sm-10">
+				<button type="submit" class="btn btn-primary" style="background: brown; padding: 1em">Aceptar</button>
+			</div>
+
+		</div>
+		<div class="form-group row">
+			<div class="col-sm-10">
+				<a type="submit" href="/producto" class="btn btn-primary" style="background: brown; padding: 1em">Regresar</a>
+			</div>
+
+		</div>
+	</div>
+</div>
+	</form>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+
+</body>
+</html>
